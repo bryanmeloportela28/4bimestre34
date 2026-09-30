@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Festival Águas Vivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Águas Vivas</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="lineup.html">Line-up</a>
+      <a href="ingressos.html">Ingressos</a>
+      <a href="local.html">Local</a>
+      <a href="contato.html" class="ativo">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="pagina-titulo"><h1>Fale conosco</h1></div>
+<section>
+  <p style="margin-bottom:24px">Dúvidas sobre ingressos, grupos de igreja ou participação como voluntário? Escreva para nós.</p>
+
+  <form id="form-contato">
+    <label for="nome">Nome</label>
+    <input id="nome" type="text">
+
+    <label for="email">E-mail</label>
+    <input id="email" type="email">
+
+    <label for="msg">Mensagem</label>
+    <textarea id="msg" rows="5"></textarea>
+
+    <button class="botao" type="submit">Enviar mensagem</button>
+    <div id="confirmacao" class="confirmacao" role="status" aria-live="polite"></div>
+  </form>
+</section>
+  </main>
+
+  <footer>Festival Águas Vivas, 14 e 15 de novembro de 2026</footer>
+
+  <script>
+  const form = document.getElementById("form-contato");
+  const aviso = document.getElementById("confirmacao");
+
+  form.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const msg = document.getElementById("msg").value.trim();
+
+    aviso.classList.add("visivel");
+
+    if (nome === "" || email === "" || msg === "") {
+      aviso.classList.add("erro");
+      aviso.textContent = "Preencha nome, e-mail e mensagem para enviar.";
+      return;
+    }
+
+    aviso.classList.remove("erro");
+    aviso.textContent = "Obrigado, " + nome + "! Recebemos sua mensagem e vamos responder em até 2 dias úteis.";
+    form.reset();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+:root{--fundo:#231A3A;--fundo2:#2E2348;--ouro:#E0B04A;--creme:#F5F0E6;--vinho:#8C2A3B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--fundo);color:var(--creme);font-family:'Lato',sans-serif;line-height:1.7;font-size:1.05rem}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15;font-weight:700}
+a{color:var(--ouro)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;border-bottom:1px solid var(--ouro)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--creme);text-decoration:none}
+nav{display:flex;gap:28px}
+nav a{color:var(--creme);text-decoration:none;padding-bottom:4px}
+nav a:hover,nav a.ativo{color:var(--ouro);border-bottom:2px solid var(--ouro)}
+main{padding:0 6%}
+.hero{padding:90px 0 70px;max-width:900px}
+.hero h1{font-size:clamp(2.8rem,9vw,6.5rem);letter-spacing:-1px}
+.hero p{font-size:1.25rem;max-width:560px;margin:28px 0 36px}
+.botao{display:inline-block;background:var(--ouro);color:var(--fundo);font-weight:700;padding:14px 32px;text-decoration:none;border-radius:2px}
+.botao:hover{background:var(--creme)}
+.faixa{background:var(--vinho);margin:0 -6%;padding:22px 6%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Playfair Display',serif;font-size:1.2rem}
+section{padding:70px 0;max-width:900px}
+section h2{font-size:2.2rem;margin-bottom:24px}
+.pagina-titulo{padding:70px 0 10px}
+.pagina-titulo h1{font-size:clamp(2.2rem,6vw,3.8rem)}
+.lineup div{display:flex;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid rgba(245,240,230,.25)}
+.lineup h3{font-size:1.6rem}
+.lineup p{max-width:520px}
+.lineup span{color:var(--ouro);white-space:nowrap;font-family:'Playfair Display',serif}
+.lineup .destaque h3{font-size:2.4rem;color:var(--ouro)}
+.ingresso{display:flex;gap:40px;padding:30px 0;border-bottom:1px solid rgba(245,240,230,.25)}
+.ingresso .preco{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--ouro);min-width:170px}
+.ingresso ul{margin:10px 0 0 20px}
+.dois{display:flex;gap:60px;flex-wrap:wrap}
+.dois>div{flex:1;min-width:260px}
+form{display:flex;flex-direction:column;gap:16px;max-width:520px}
+label{font-weight:700}
+input,textarea{padding:12px;border:1px solid var(--ouro);background:var(--fundo2);color:var(--creme);font:inherit;border-radius:2px}
+button{cursor:pointer;border:0;font:inherit;align-self:flex-start}
+footer{border-top:1px solid var(--ouro);padding:30px 6%;margin-top:40px;text-align:center;font-size:.95rem}
+@media(max-width:700px){header{flex-direction:column;gap:14px}nav{gap:16px;flex-wrap:wrap;justify-content:center}.lineup div,.ingresso{flex-direction:column;gap:8px}}
+.confirmacao{display:none;border-left:4px solid var(--ouro);background:var(--fundo2);padding:18px 22px;max-width:520px;margin-top:8px}
+.confirmacao.visivel{display:block}
+.confirmacao.erro{border-left-color:var(--vinho)}
